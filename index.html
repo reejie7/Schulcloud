@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IT-Sicherheit – Schulungsdemo</title>
+<style>
+body {
+  font-family: Arial;
+  background: #eef2f7;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+main {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 380px;
+  width: 85%;
+}
+input, button {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 12px;
+  margin: 9px 0;
+}
+button {
+  background: #2457a7;
+  color: white;
+  border: 0;
+  cursor: pointer;
+}
+.notice {
+  color: #555;
+  font-size: 13px;
+}
+</style>
+</head>
+<body>
+<main>
+  <h2>IT-Sicherheit</h2>
+  <p>Willkommen zur Phishing-Schulung.</p>
+  <p>Teste, ob du verdächtige Anmeldeaufforderungen erkennst.</p>
+
+  <form id="demo">
+    <label>Test-Benutzername</label>
+    <input required placeholder="z. B. schueler123">
+
+    <label>Demo-Passwort (keine echten Passwörter!)</label>
+    <input required placeholder="Nur erfundene Testdaten">
+
+    <button type="submit">Test absenden</button>
+  </form>
+
+  <p id="result"></p>
+  <p class="notice">Dies ist eine Schulungssimulation.
+  Es werden keine Zugangsdaten übertragen oder gespeichert.</p>
+</main>
+<script>
+document.getElementById("demo").addEventListener("submit", function(e) {
+  e.preventDefault();
+  document.getElementById("result").textContent =
+    "Simulation abgeschlossen! Achte immer auf verdächtige Links.";
+  this.reset();
+});
+</script>
+</body>
+</html>
